@@ -41,7 +41,7 @@ class AdminService {
         if (!vendor) throw new Error("Vendor not found");
         const vendorName = vendor.vendorName
         
-        const response = await axios.post('http://localhost:5001/api/vendor/generate-api-key', { vendorName, transactionId });
+        const response = await axios.post('http://52.91.251.247:5001/api/vendor/generate-api-key', { vendorName, transactionId });
         if (!response.data.apiKey) throw new Error(response.data.error);
         
         vendor.apiKey.push({apiKey : response.data.apiKey, transactionId});

@@ -27,7 +27,7 @@ function DisputeStatus() {
         setDispute(null);
 
         try {
-            const response = await axios.post("http://localhost:8003/api/disputes/dispute-status", { ticketNumber }, {
+            const response = await axios.post("http://52.91.251.247:8003/api/disputes/dispute-status", { ticketNumber }, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setDispute(response.data);

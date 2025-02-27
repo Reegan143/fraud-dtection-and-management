@@ -21,7 +21,7 @@ const ResetPasswordRequest = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/user/reset-Password', { email });
+      const response = await axios.post('http://52.91.251.247:8000/api/user/reset-Password', { email });
       setMessage(response.data.message);
 
       setTimeout(() => {

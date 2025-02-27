@@ -83,7 +83,7 @@ const Signup = () => {
       setIsLoading(true);
       try {
         console.log(formData)
-        const response = await axios.post('http://localhost:8000/api/user', {
+        const response = await axios.post('http://52.91.251.247:8000/api/user', {
           userName: formData.name,
           email: formData.email,
           password: formData.password,

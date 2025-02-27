@@ -50,7 +50,7 @@ class VendorService {
         const vendor = await VendorRepository.findVendorByName(vendorName);
         if (!vendor || !vendor.apiKey) throw new Error("API Key not found. Please request an API Key first.");
 
-        const response = await axios.get(`http://localhost:5001/api/card-network/transactions/${transactionId}`, {
+        const response = await axios.get(`http://52.91.251.247:5001/api/card-network/transactions/${transactionId}`, {
             headers: {
                 'Authorization': `Bearer ${authorization.split(' ')[1]}`,
                 'x-api-key': vendor.apiKey

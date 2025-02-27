@@ -3,7 +3,7 @@ import axios from "axios";
 // Create separate instances for different services
 const createAPIInstance = (port) => {
   return axios.create({
-    baseURL: `http://localhost:${port}/api`,
+    baseURL: `http://52.91.251.247:${port}/api`,
   });
 };
 

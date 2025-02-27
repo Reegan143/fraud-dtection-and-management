@@ -23,7 +23,7 @@ const ResetPasswordForm = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/user/verify-otp', {
+      const response = await axios.post('http://52.91.251.247:8000/api/user/verify-otp', {
         email,
         otp,
         newPassword
