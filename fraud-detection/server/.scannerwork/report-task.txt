@@ -1,0 +1,6 @@
+projectKey=fraudDemo
+serverUrl=http://localhost:9000
+serverVersion=25.2.0.102705
+dashboardUrl=http://localhost:9000/dashboard?id=fraudDemo
+ceTaskId=f3f3565a-54f6-4494-87ed-2a18300baa5e
+ceTaskUrl=http://localhost:9000/api/ce/task?id=f3f3565a-54f6-4494-87ed-2a18300baa5e

@@ -1,0 +1,38 @@
+// .vscode/settings.json
+{
+    "sonarlint.rules": {
+      // JavaScript/Node.js rules
+      "javascript:S1068": { "level": "on" },  // Unused variables
+      "javascript:S1117": { "level": "on" },  // Variable shadowing
+      "javascript:S1854": { "level": "on" },  // Dead stores
+      "javascript:S2201": { "level": "on" },  // Return values should be used
+      "javascript:S2259": { "level": "on" },  // Null pointer dereference
+      "javascript:S3498": { "level": "on" },  // Object.freeze()
+      "javascript:S3723": { "level": "on" },  // Memory leaks
+      
+      // React-specific rules
+      "javascript:S6478": { "level": "on" },  // React hooks dependencies
+      "javascript:S6477": { "level": "on" },  // React component props
+      "javascript:S6443": { "level": "on" },  // React setState usage
+      
+      // MongoDB/Mongoose rules
+      "javascript:S5332": { "level": "on" },  // Database credentials security
+      "javascript:S4423": { "level": "on" },  // Weak SSL/TLS configuration
+      
+      // Express.js rules
+      "javascript:S5693": { "level": "on" },  // Express.js security headers
+      "javascript:S5725": { "level": "on" }   // HTTP security headers
+    },
+    
+    // Files to exclude from analysis
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}",
+    "sonarlint.excludes": [
+      "**/node_modules/**",
+      "**/build/**",
+      "**/dist/**",
+      "**/.git/**",
+      "**/coverage/**",
+      "**/*.test.js",
+      "**/*.spec.js"
+    ]
+  }

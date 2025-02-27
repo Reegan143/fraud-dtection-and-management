@@ -1,0 +1,26 @@
+.dashboard-container {
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.main-content {
+  padding: 20px;
+  background-color: #fff; 
+}
+
+.content-area {
+  padding: 20px;
+  border: 1px solid #eee; 
+  border-radius: 5px;
+}
+
+.sidebar .nav-link.active {
+  background-color: #007bff; 
+  color: white !important; 
+}
