@@ -3,6 +3,7 @@ import { Button, Form, Container, Row, Col, Alert, Navbar, Modal } from 'react-b
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useNavigate, Link } from 'react-router-dom'
 import AuthContext from '../context/authContext'
+import API  from '../utils/axiosInstance'
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -49,15 +50,13 @@ const LoginPage = () => {
     setErrorMessage('')
 
     try {
-      const response = await fetch('http://localhost:8000/api/user/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      })
+      console.log("hello")
+      const response = await API.user.post('/user/auth/login', { email, password })
 
-      const data = await response.json()
 
-      if (response.ok) {
+      const data = response.data
+
+      if (response.data.message) {
         setModalTitle('Success')
         setModalMessage('Login successful')
         setShowModal(true)
