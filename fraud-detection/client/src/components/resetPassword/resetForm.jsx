@@ -1,7 +1,7 @@
 import React, { useState,Link } from 'react';
-import axios from 'axios';
 import { Container, Row, Col, Card, Form, Button, Alert, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import API from "../utils/axiosInstance"
 
 const ResetPasswordForm = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +23,7 @@ const ResetPasswordForm = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://52.91.251.247:8000/api/user/verify-otp', {
+      const response = await API.user.post('user/verify-otp', {
         email,
         otp,
         newPassword

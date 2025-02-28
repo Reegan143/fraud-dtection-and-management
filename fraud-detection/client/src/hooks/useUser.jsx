@@ -4,7 +4,7 @@ import API from '../components/utils/axiosInstance';
 
 export function useUser(token) {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [userName, setUserName] = useState('');
   const [sessionExpired, setSessionExpired] = useState(false);
 

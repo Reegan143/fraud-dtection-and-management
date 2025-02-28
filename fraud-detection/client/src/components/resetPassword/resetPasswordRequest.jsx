@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import API from "../utils/axiosInstance"
 import { Container, Row, Col, Card, Form, Button, Alert, Navbar } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ const ResetPasswordRequest = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://52.91.251.247:8000/api/user/reset-Password', { email });
+      const response = await API.user.post('/user/reset-Password', { email });
       setMessage(response.data.message);
 
       setTimeout(() => {

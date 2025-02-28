@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import axios from "axios";
 import Header from "./dashboard/header/header";
 import Sidebar from "./dashboard/sideBar/sidebar";
 import {setAuthToken} from "./utils/axiosInstance";
 import AuthContext from "./context/authContext";
 import ChatBubble from "./chatbot/ChatBubble";
+import API from "./utils/axiosInstance"
 
 
 function DisputeStatus() {
@@ -27,9 +27,7 @@ function DisputeStatus() {
         setDispute(null);
 
         try {
-            const response = await axios.post("http://52.91.251.247:8003/api/disputes/dispute-status", { ticketNumber }, {
-                headers: { Authorization: `Bearer ${token}` },
-            });
+            const response = await API.utils.post("/disputes/dispute-status", { ticketNumber });
             setDispute(response.data);
         } catch (err) {
             setError(err.response?.data?.message || "Error fetching dispute details");

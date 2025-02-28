@@ -13,7 +13,6 @@ import DisputeHeader from './disputeHeader';
 import SessionExpiredModal from '../../modals/sessionExpiredModal';
 
 function VendorDashboard() {
-  const navigate = useNavigate();
   const { 
     disputes,
     loading,

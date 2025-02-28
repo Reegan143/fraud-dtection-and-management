@@ -7,7 +7,7 @@ export function useVendor() {
   const { token } = useContext(AuthContext);
   const navigate = useNavigate();
   const [disputes, setDisputes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [isPolling, setIsPolling] = useState(false);
   const [vendorName, setVendorName] = useState('');
   const [sessionExpired, setSessionExpired] = useState(false);

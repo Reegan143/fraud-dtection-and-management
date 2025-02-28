@@ -3,7 +3,7 @@ import API from '../components/utils/axiosInstance';
 
 export function useDisputes(token) {
   const [disputes, setDisputes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!token) return;

@@ -21,7 +21,7 @@ function AdminDashboard() {
   const [selectedDispute, setSelectedDispute] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [sessionExpired, setSessionExpired] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [sortBy, setSortBy] = useState('date_asc');
   const [searchQuery, setSearchQuery] = useState('');
   const [remarks, setRemarks] = useState('');

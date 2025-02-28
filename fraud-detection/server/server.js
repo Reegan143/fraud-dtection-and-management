@@ -57,9 +57,9 @@ const startUtilsServer = async () => {
 
 startUserServer()
 
-startAdminServer()
+// startAdminServer()
 
-startVendorServer()
+// startVendorServer()
 
-startUtilsServer()
+// startUtilsServer()
 

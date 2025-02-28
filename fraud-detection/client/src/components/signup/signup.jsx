@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card, Alert, Navbar } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import API from "../utils/axiosInstance"
 import './signup.css';
 
 const Signup = () => {
@@ -83,7 +83,7 @@ const Signup = () => {
       setIsLoading(true);
       try {
         console.log(formData)
-        const response = await axios.post('http://52.91.251.247:8000/api/user', {
+        const response = await API.user.post('/user', {
           userName: formData.name,
           email: formData.email,
           password: formData.password,
