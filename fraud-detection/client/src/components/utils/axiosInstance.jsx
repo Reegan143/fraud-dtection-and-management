@@ -1,20 +1,17 @@
 import axios from "axios";
 
-// Create separate instances for different services
 const createAPIInstance = (port) => {
   return axios.create({
-    baseURL: `http://localhost:${port}/api`,
+    baseURL: `http://${import.meta.env.VITE_HOST}:${port}/api`,
   });
 };
 
-// Create API instances for each service
-export const userAPI = createAPIInstance(8000);
-export const adminAPI = createAPIInstance(8001);
-export const vendorAPI = createAPIInstance(8002);
-export const utilsAPI = createAPIInstance(8003);
+export const userAPI = createAPIInstance(import.meta.env.VITE_PORT);
+export const adminAPI = createAPIInstance(import.meta.env.VITE_ADMINPORT);
+export const vendorAPI = createAPIInstance(import.meta.env.VITE_VENDORPORT);
+export const utilsAPI = createAPIInstance(import.meta.env.VITE_UTILSPORT);
 
 const instances = [userAPI, adminAPI, vendorAPI, utilsAPI];
-// Apply auth token to all instances
 export const setAuthToken = (getToken) => {
   
   instances.forEach(instance => {
@@ -27,7 +24,6 @@ export const setAuthToken = (getToken) => {
         return config;
       },
       (error) => {
-        // Convert the error to an Error object if it isn't already
         if (!(error instanceof Error)) {
           return Promise.reject(new Error(error?.message.error || 'Request failed'));
         }
