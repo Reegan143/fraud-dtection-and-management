@@ -15,6 +15,10 @@ class DisputesService {
         let isTransactionExist = await DisputesRepository.findDisputeByTransactionId(transactionId);
         let transaction = await DisputesRepository.findTransactionById(transactionId);
         if (!transaction) throw new Error('No transaction found');
+
+        if(transaction.status === 'submitted'){
+            throw new Error('Transaction has already been submitted');
+        }
         
         const amount = transaction.amount;
         const userRecord = await DisputesRepository.findUserByDebitCard(debitCardNumber);
