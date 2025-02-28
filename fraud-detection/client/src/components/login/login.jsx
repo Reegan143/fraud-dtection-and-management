@@ -84,7 +84,7 @@ const LoginPage = () => {
       }
     } catch (error) {
       setModalTitle('Error')
-      setModalMessage('An error occurred. Please try again later.')
+      setModalMessage(error.response?.data?.error || 'An error occurred. Please try again later.')
       setShowModal(true)
     } finally {
       setIsLoading(false)
