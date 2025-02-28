@@ -28,8 +28,6 @@ class DisputesService {
         
         if (vendorName) {
             const vendor = await userRepository.findVendor( vendorName );
-            console.log('vendorName', vendor)
-            console.log(vendorName)
             if (!vendor) throw new Error('Vendor not found');
             
             const message = `${userName} has raised a dispute on you. <p>Complaint Type: ${complaintType}</p>

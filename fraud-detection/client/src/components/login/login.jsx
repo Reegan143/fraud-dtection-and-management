@@ -50,7 +50,6 @@ const LoginPage = () => {
     setErrorMessage('')
 
     try {
-      console.log("hello")
       const response = await API.user.post('/user/auth/login', { email, password })
 
 
@@ -67,7 +66,6 @@ const LoginPage = () => {
           sessionStorage.removeItem('hasReloaded')
           sessionStorage.removeItem('lastPath')
           setTimeout(() => {
-            console.log(data.user.role)
             const redirectPath = data.user.role === 'admin' 
           ? "/admin/dashboard" 
           : data.user.role === 'vendor' 

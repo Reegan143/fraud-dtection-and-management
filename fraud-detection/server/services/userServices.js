@@ -26,7 +26,6 @@ class UserService {
     }
 
     async loginUser(email, password) {
-        console.log("hello")
         const user = await UserRepository.findUserByEmail(email);
         if (!user) {    
             throw new Error("Invalid Credentials");

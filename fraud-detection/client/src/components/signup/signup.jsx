@@ -82,7 +82,6 @@ const Signup = () => {
     if (validateForm()) {
       setIsLoading(true);
       try {
-        console.log(formData)
         const response = await API.user.post('/user', {
           userName: formData.name,
           email: formData.email,
