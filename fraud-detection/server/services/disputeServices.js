@@ -15,6 +15,7 @@ class DisputesService {
         let isTransactionExist = await DisputesRepository.findDisputeByTransactionId(transactionId);
         let transaction = await DisputesRepository.findTransactionById(transactionId);
         if (!transaction) throw new Error('No transaction found');
+        console.log(transaction.status)
 
         if(transaction.status === 'submitted'){
             throw new Error('Transaction has already been submitted');
